@@ -62,6 +62,6 @@ This separation is what makes it structurally difficult for a compromised applic
 |---|---|
 | Runs entirely client-side (e.g., a static web app) | Web SDK |
 | Has a backend that needs to request approvals on a schedule, from a webhook, or on behalf of an AI agent | Server SDK (often alongside Web SDK for the pairing step) |
-| Is the trusted device itself | You don't integrate the Mobile App SDK — end users install the Approva app |
+| Is the trusted device itself | You integrate the Mobile App SDK
 
 Most production integrations use **Web SDK for pairing** and **Server SDK for everything after** — see [Connection Flow](./03-connection-flow.md) and [Authorization Flow](./04-authorization-flow.md).
