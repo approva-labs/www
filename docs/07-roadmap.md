@@ -2,7 +2,7 @@
 
 Approva's current release covers the core approval loop: connect a trusted device once, request approval, receive a signed and settled result. This document covers what's shipped and what's coming next.
 
-## Shipped today
+## Shipped today**
 
 - **Web SDK** — connect trusted device, create authorization requests, listen for events
 - **Server SDK** — manage sessions, send authorization requests, submit transactions, receive confirmations
@@ -10,7 +10,7 @@ Approva's current release covers the core approval loop: connect a trusted devic
 - **Blockchain settlement** — signed approvals submitted and confirmed on-chain
 - **Core use cases** — marketplace checkout, AI credit purchases, membership upgrades, payments
 
-## Coming soon
+## Planned next
 
 ### AI Agent Approval
 Purpose-built support for approving actions performed by AI agents before they execute on a user's behalf — including richer context in the approval request (what the agent is trying to do and why) so approvals stay meaningful even as more of the initiating "user" is software rather than a person clicking a button.
@@ -21,7 +21,7 @@ Support for requiring **multiple** people to approve sensitive actions and trans
 ### Approval Policies
 Rule-based control over how approvals behave — for example, auto-approving below a threshold amount, requiring team approval above another threshold, or scoping what a given application is allowed to ever request. This turns the manual "review every request" model into a configurable policy layer for teams that need it.
 
-## Direction beyond the current roadmap
+## Exploring
 
 Longer-term areas under consideration, not yet committed to a release:
 
