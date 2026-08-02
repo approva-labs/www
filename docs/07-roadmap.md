@@ -2,7 +2,7 @@
 
 Approva's current release covers the core approval loop: connect a trusted device once, request approval, receive a signed and settled result. This document covers what's shipped and what's coming next.
 
-## Shipped today**
+## Building now
 
 - **Web SDK** — connect trusted device, create authorization requests, listen for events
 - **Server SDK** — manage sessions, send authorization requests, submit transactions, receive confirmations
