@@ -3,7 +3,7 @@ import Button from './Button.jsx';
 
 export default function Nav() {
 
-  const getStarted = useExternalLink('https://docs.google.com/document/d/12HZV0amzBrt2qW2JTRGKPzstGWBLM6qIex9OPc1tH88/edit?usp=sharing');
+  const getStarted = useExternalLink('https://github.com/approva-labs/www/blob/main/WHITEPAPER.md');
 
   return (
     <nav className="border-b border-line">

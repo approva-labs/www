@@ -53,7 +53,7 @@ const FLOW_NODES = [
 ];
 
 export default function Hero() {
-  const getStarted = useExternalLink('https://docs.google.com/document/d/12HZV0amzBrt2qW2JTRGKPzstGWBLM6qIex9OPc1tH88/edit?usp=sharing');
+  const getStarted = useExternalLink('https://github.com/approva-labs/www/blob/main/WHITEPAPER.md');
   const openDocs = useExternalLink('https://github.com/approva-labs/www/blob/main/README.md');
 
   return (
