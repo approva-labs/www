@@ -1,7 +1,3 @@
-# Approva Documentation
-
-> Generic settlement network architecture.
-
 # Security Model
 
 Approva exists to sit between a request and a signature. That job only works if the layer itself is provably safe. This document describes the security properties Approva is built on.
@@ -24,7 +20,7 @@ Every approval requires Face ID, Touch ID, or the platform-equivalent device bio
 A trusted-device session is scoped to what it's allowed to approve for a given application — it is not a blanket grant of authority. Sessions can be revoked instantly from any connected application or from the Approva mobile app directly, with no standing access left open after revocation.
 
 ### On-chain audit trail
-Every approval and rejection is timestamped, and approved transactions are settled on-chain. This produces a permanent, independently verifiable record — one that doesn't depend on trusting Approva's own logs after the fact. See [Settlement Network Integration](./06-settlement network-integration.md).
+Every approval and rejection is timestamped, and approved transactions are settled on-chain. This produces a permanent, independently verifiable record — one that doesn't depend on trusting Approva's own logs after the fact. See [Blockchain Integration](./06-blockchain-integration.md).
 
 ### No signature without the trusted device
 As covered in [SDK Responsibilities](./05-sdk-responsibilities.md), neither your application nor Approva's server infrastructure holds signing material capable of completing a transaction. Only the paired trusted device can produce a valid signature, and only in response to a specific, user-reviewed request.
@@ -43,11 +39,3 @@ Being direct about limits matters as much as stating guarantees:
 ## Reporting a vulnerability
 
 Security issues should be reported through the process documented in the project's GitHub repository rather than filed as public issues. See [GitHub](https://github.com) for current disclosure guidelines.
-
-
-```mermaid
-flowchart LR
-A[Application]-->B[Approva SDKs]
-B-->C[Approva Protocol]
-C-->D[Settlement Network]
-```

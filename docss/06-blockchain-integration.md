@@ -1,10 +1,6 @@
-# Approva Documentation
+# Blockchain Integration
 
-> Generic settlement network architecture.
-
-# Settlement Network Integration
-
-Approva settles approved transactions on a public settlement network. This document explains what that means in practice and what properties Approva's settlement layer depends on — without tying the architecture to any single network.
+Approva settles approved transactions on a public blockchain. This document explains what that means in practice and what properties Approva's settlement layer depends on — without tying the architecture to any single network.
 
 ## Why settlement is on-chain at all
 
@@ -33,11 +29,3 @@ Once submitted, Approva listens for the transaction's confirmation and relays th
 ## Network configuration
 
 Which network Approva settles on is a configuration choice made at deployment time, with testnet/mainnet-equivalent environments supported for development versus production use. Because the settlement layer is abstracted behind the Server SDK's `authorize()` call, application code does not need to change based on which network is configured underneath it. See [Roadmap](./07-roadmap.md) for planned work on supporting more than one settlement network per deployment.
-
-
-```mermaid
-flowchart LR
-A[Application]-->B[Approva SDKs]
-B-->C[Approva Protocol]
-C-->D[Settlement Network]
-```

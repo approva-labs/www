@@ -1,7 +1,3 @@
-# Approva Documentation
-
-> Generic settlement network architecture.
-
 # SDK Responsibilities
 
 Approva ships three SDKs. Each has a distinct, narrow job — this document defines the boundaries so integrators know which SDK owns which part of the flow. For method-level detail, see [SDK Reference](./09-sdk-reference.md).
@@ -19,7 +15,7 @@ Responsible for:
 
 Not responsible for:
 - Holding signing keys or biometric data
-- Submitting transactions directly to the settlement network (that's the Server SDK's job when a backend is present)
+- Submitting transactions directly to the blockchain (that's the Server SDK's job when a backend is present)
 
 ## Server SDK (`@approva/server`)
 
@@ -29,7 +25,7 @@ Not responsible for:
 Responsible for:
 - Managing trusted sessions at scale, server-side
 - Sending authorization requests on behalf of your application (including from background jobs, cron tasks, or AI agent processes with no user actively in a browser)
-- Submitting signed transactions to the settlement network once approved
+- Submitting signed transactions to the blockchain once approved
 - Receiving and relaying confirmations back to your application layer
 
 Not responsible for:
@@ -49,7 +45,7 @@ Responsible for:
 
 Not responsible for:
 - Storing application business logic
-- Submitting transactions to the settlement network directly (it returns a signed result to Approva's infrastructure, which handles submission)
+- Submitting transactions to the blockchain directly (it returns a signed result to Approva's infrastructure, which handles submission)
 
 ## Why the split matters
 
@@ -69,11 +65,3 @@ This separation is what makes it structurally difficult for a compromised applic
 | Is the trusted device itself | You integrate the Mobile App SDK
 
 Most production integrations use **Web SDK for pairing** and **Server SDK for everything after** — see [Connection Flow](./03-connection-flow.md) and [Authorization Flow](./04-authorization-flow.md).
-
-
-```mermaid
-flowchart LR
-A[Application]-->B[Approva SDKs]
-B-->C[Approva Protocol]
-C-->D[Settlement Network]
-```

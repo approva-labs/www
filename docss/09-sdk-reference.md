@@ -1,7 +1,3 @@
-# Approva Documentation
-
-> Generic settlement network architecture.
-
 # SDK Reference
 
 API-level reference for `@approva/web`, `@approva/server`, and the events both emit. For the conceptual split between them, see [SDK Responsibilities](./05-sdk-responsibilities.md).
@@ -142,11 +138,3 @@ try {
 ## Rate limits and timeouts
 
 Authorization requests time out if left unanswered — treat a timeout the same as a rejection in your application logic, since an unanswered request should never be assumed approved.
-
-
-```mermaid
-flowchart LR
-A[Application]-->B[Approva SDKs]
-B-->C[Approva Protocol]
-C-->D[Settlement Network]
-```

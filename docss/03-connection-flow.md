@@ -1,7 +1,3 @@
-# Approva Documentation
-
-> Generic settlement network architecture.
-
 # Connection Flow
 
 Before an application can request approvals, a user has to link a trusted device once. This document covers that pairing flow in detail.
@@ -55,11 +51,3 @@ Sessions are designed to be **long-lived but never silently permanent**:
 ## Where this leads
 
 Once a device is connected, your application can begin creating authorization requests — see [Authorization Flow](./04-authorization-flow.md).
-
-
-```mermaid
-flowchart LR
-A[Application]-->B[Approva SDKs]
-B-->C[Approva Protocol]
-C-->D[Settlement Network]
-```

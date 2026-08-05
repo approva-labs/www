@@ -1,7 +1,3 @@
-# Approva Documentation
-
-> Generic settlement network architecture.
-
 # Roadmap
 
 Approva's current release covers the core approval loop: connect a trusted device once, request approval, receive a signed and settled result. This document covers what's shipped and what's coming next.
@@ -11,7 +7,7 @@ Approva's current release covers the core approval loop: connect a trusted devic
 - **Web SDK** — connect trusted device, create authorization requests, listen for events
 - **Server SDK** — manage sessions, send authorization requests, submit transactions, receive confirmations
 - **Mobile App (iOS / Android)** — deep-link or QR pairing, plain-language request review, biometric approval
-- **Settlement Network settlement** — signed approvals submitted and confirmed on-chain
+- **Blockchain settlement** — signed approvals submitted and confirmed on-chain
 - **Core use cases** — marketplace checkout, AI credit purchases, membership upgrades, payments
 
 ## Planned next
@@ -29,18 +25,10 @@ Rule-based control over how approvals behave — for example, auto-approving bel
 
 Longer-term areas under consideration, not yet committed to a release:
 
-- **Expanded network support** — additional settlement network networks, for teams that need multi-chain settlement
+- **Expanded network support** — additional blockchain networks, for teams that need multi-chain settlement
 - **Delegated, scoped agent sessions** — narrower, time-boxed authority for autonomous agents that reduces how often a human needs to be in the loop for low-risk, high-frequency actions, without removing the checkpoint for anything consequential
 - **Deeper audit tooling** — exportable, queryable approval histories for compliance and reporting use cases
 
 ## How this roadmap is prioritized
 
 Approva's guiding principle is that new capabilities should make the human checkpoint **more meaningful**, not remove it. Features like Approval Policies exist to reduce noise from low-stakes requests — not to quietly expand what can happen without a person's awareness.
-
-
-```mermaid
-flowchart LR
-A[Application]-->B[Approva SDKs]
-B-->C[Approva Protocol]
-C-->D[Settlement Network]
-```

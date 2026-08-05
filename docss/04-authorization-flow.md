@@ -1,7 +1,3 @@
-# Approva Documentation
-
-> Generic settlement network architecture.
-
 # Authorization Flow
 
 Once a trusted device is connected (see [Connection Flow](./03-connection-flow.md)), your application can request approval for specific actions. This is the core loop Approva exists to support.
@@ -9,7 +5,7 @@ Once a trusted device is connected (see [Connection Flow](./03-connection-flow.m
 ## Overview
 
 ```
-Your App  →  Approva Server SDK  →  Trusted Device  →  Settlement Network  →  Your App
+Your App  →  Approva Server SDK  →  Trusted Device  →  Blockchain  →  Your App
  (create        (delivers, waits       (review &         (settle    (confirmed)
   request)        for approval)          approve)          record)
 ```
@@ -41,7 +37,7 @@ Approving requires the device's biometric authentication (Face ID, Touch ID, or 
 On approval, the mobile app signs the result and returns it to Approva. On rejection, no signature is produced and your application is notified of the rejection with a reason if one was given.
 
 **6. Settlement**
-The Server SDK submits the signed transaction to the settlement network. This is what actually moves value or records the action on-chain.
+The Server SDK submits the signed transaction to the blockchain. This is what actually moves value or records the action on-chain.
 
 **7. Confirmation**
 Your application receives a real-time event once the transaction is confirmed, and can continue its own logic — e.g., delivering a purchased item, activating a plan, or releasing a payout.
@@ -66,11 +62,3 @@ A typical end-to-end approval — from request creation to your application rece
 ## Design intent: one checkpoint, not friction
 
 The authorization flow is deliberately narrow: one clear request, one human decision, one settlement. Approva does not batch multiple unrelated actions into a single approval, and does not allow an application to pre-approve future requests on a user's behalf — every distinct action gets its own checkpoint.
-
-
-```mermaid
-flowchart LR
-A[Application]-->B[Approva SDKs]
-B-->C[Approva Protocol]
-C-->D[Settlement Network]
-```
